@@ -1,0 +1,12 @@
+.idea
+*.tix
+.stack-work
+dist
+exes
+*.log
+*.aux
+*.hp
+*.prof
+*.ps
+*.lock
+*.temp
