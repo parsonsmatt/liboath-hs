@@ -10,6 +10,7 @@ import Data.Function (fix)
 import Foreign.Storable (peek)
 
 import LibOath.Internal
+
 -- this is basically just copying over the main function from oathtool.c
 main :: IO ()
 main = do

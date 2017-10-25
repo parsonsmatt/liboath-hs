@@ -17,8 +17,11 @@ library
   hs-source-dirs:      src
   exposed-modules:     LibOath
                      , LibOath.Internal
-  build-depends:       base     >= 4.7     && < 5
-                     , inline-c >= 0.5.6.1 && < 0.6.1.0
+  build-depends:       base            >= 4.7     && < 5
+                     , inline-c        >= 0.5.6.1 && < 0.6.1.0
+                     , safe-exceptions
+                     , bytestring
+                     , time
   default-language:    Haskell2010
   c-sources:           src/LibOath/Internal.c
   pkgconfig-depends:   liboath >= 2.0
