@@ -19,17 +19,17 @@ module LibOath
     , Base32(unBase32)
     ) where
 
-import qualified Language.C.Inline as C
-import Control.Exception.Safe
-import qualified Data.ByteString as BS
-import Control.Monad (join)
-import Data.ByteString (ByteString)
-import qualified Foreign.Marshal.Alloc as Alloc
-import qualified Foreign.C.String as C
-import Foreign.Storable (peek)
-import Data.Time.Clock.POSIX (getPOSIXTime)
+import           Control.Exception.Safe
+import           Control.Monad          (join)
+import           Data.ByteString        (ByteString)
+import qualified Data.ByteString        as BS
+import           Data.Time.Clock.POSIX  (getPOSIXTime)
+import qualified Foreign.C.String       as C
+import qualified Foreign.Marshal.Alloc  as Alloc
+import           Foreign.Storable       (peek)
+import qualified Language.C.Inline      as C
 
-import LibOath.Internal
+import           LibOath.Internal
 
 -- | Unwrap an 'Action', returning 'Either' an 'Error' caused by initialization
 -- failure of
@@ -49,7 +49,7 @@ generateTOTPFromSecret :: ByteString -> IO (Either Error ByteString)
 generateTOTPFromSecret bs = fmap join . run $ do
     eerrb32 <- decodeBase32 bs
     case eerrb32 of
-        Left err -> pure (Left err)
+        Left err  -> pure (Left err)
         Right b32 -> generateTOTP b32
 
 
@@ -102,7 +102,7 @@ generateTOTP (Base32 bs) = Action $ do
 whenOK :: C.CInt -> IO a -> IO (Either Error a)
 whenOK rc action =
     case fromCInt rc of
-        OK -> Right <$> action
+        OK  -> Right <$> action
         err -> pure (Left err)
 
 whenOKM :: IO C.CInt -> IO a -> IO (Either Error a)

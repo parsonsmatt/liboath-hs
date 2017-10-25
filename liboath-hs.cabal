@@ -32,6 +32,7 @@ executable oathtool-hs
   build-depends:       base
                      , liboath-hs
                      , time
+                     , bytestring
   default-language:    Haskell2010
 
 test-suite liboath-hs-test
