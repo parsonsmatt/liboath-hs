@@ -24,6 +24,8 @@ library
                      , time
   default-language:    Haskell2010
   c-sources:           src/LibOath/Internal.c
+  extra-libraries:     oath
+  cc-options:          -O2 -Wall
   pkgconfig-depends:   liboath >= 2.0
 
 executable oathtool-hs
