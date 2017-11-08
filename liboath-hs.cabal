@@ -27,7 +27,7 @@ library
   includes:            oath.h
   extra-libraries:     oath
   cc-options:          -Wall
-  pkgconfig-depends:   liboath >= 2.6
+  pkgconfig-depends:   liboath >= 2.0
 
 executable oathtool-hs
   hs-source-dirs:      app
