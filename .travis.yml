@@ -11,11 +11,6 @@
 # Use new container infrastructure to enable caching
 sudo: false
 
-addons:
-  apt:
-    packages:
-    - liboath-dev
-
 # Do not choose a language; we provide our own build tools.
 language: generic
 
@@ -38,6 +33,11 @@ cache:
 # matrix, you can use a line such as:
 #     addons: {apt: {packages: [libfcgi-dev,libgmp-dev]}}
 matrix:
+  addons:
+    apt:
+      packages:
+      - liboath-dev
+  
   include:
   - env: BUILD=cabal GHCVER=7.10.3 CABALVER=1.22 HAPPYVER=1.19.5 ALEXVER=3.1.7
     compiler: ": #GHC 7.10.3"
