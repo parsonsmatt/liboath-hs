@@ -1,5 +1,5 @@
 name:                liboath-hs
-version:             0.1.0.0
+version:             0.0.1.0
 synopsis:            Bindings to liboath
 description:         See README for details.
 homepage:            https://github.com/parsonsmatt/liboath-hs#readme
