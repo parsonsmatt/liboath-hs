@@ -147,18 +147,17 @@ oath_base32_encode in_ inlen out outlen =
         oath_base32_encode($(const char * in_), $(size_t inlen), $(char ** out), $(size_t * outlen))
     }|]
 
-oath_totp_generate2
-    :: C.CString -> C.CSize -> C.CTime -> C.CUInt -> C.CTime -> C.CUInt -> C.CInt -> C.CString -> IO C.CInt
-oath_totp_generate2 secret secretLen now timeStepSize startOffset digits flags outputOtp =
+oath_totp_generate
+    :: C.CString -> C.CSize -> C.CTime -> C.CUInt -> C.CTime -> C.CUInt -> C.CString -> IO C.CInt
+oath_totp_generate secret secretLen now timeStepSize startOffset digits outputOtp =
     [C.exp|int {
-        oath_totp_generate2(
+        oath_totp_generate(
             $(const char * secret),
             $(size_t secretLen),
             $(time_t now),
             $(unsigned int timeStepSize),
             $(time_t startOffset),
             $(unsigned int digits),
-            $(int flags),
             $(char * outputOtp)
         )
     }|]

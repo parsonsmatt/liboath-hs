@@ -81,23 +81,19 @@ generateTOTP (Base32 bs) = Action $ do
         let whenTime = now
             t0 = 0
             timeStepSize = 0
-            totpFlags = 0
             digits = 6
             window = 0
             iter = 1
         otpPtr <- C.newCString (replicate (fromIntegral digits + 1) ' ')
-        oath_totp_generate2
+        oath_totp_generate
             secret secretLen
             (whenTime + iter * timeStepSize)
             (fromIntegral (case timeStepSize of C.CTime i -> i))
             t0
             digits
-            totpFlags
             otpPtr
             `whenOKM` do
                 BS.packCString otpPtr
-
-
 
 whenOK :: C.CInt -> IO a -> IO (Either Error a)
 whenOK rc action =
@@ -109,6 +105,3 @@ whenOKM :: IO C.CInt -> IO a -> IO (Either Error a)
 whenOKM mrc action = do
     rc <- mrc
     whenOK rc action
-
-
-

@@ -35,17 +35,16 @@ return (
 }
 
 
-int inline_c_LibOath_Internal_6_8da826b2ee84d49df47fa4d3f77b4068fbc03b70(const char * secret_inline_c_0, size_t secretLen_inline_c_1, time_t now_inline_c_2, unsigned timeStepSize_inline_c_3, time_t startOffset_inline_c_4, unsigned digits_inline_c_5, int flags_inline_c_6, char * outputOtp_inline_c_7) {
+int inline_c_LibOath_Internal_6_aa953bedae5657c3a6df617e2a429a2b85f05ddf(const char * secret_inline_c_0, size_t secretLen_inline_c_1, time_t now_inline_c_2, unsigned timeStepSize_inline_c_3, time_t startOffset_inline_c_4, unsigned digits_inline_c_5, char * outputOtp_inline_c_6) {
 return (
-        oath_totp_generate2(
+        oath_totp_generate(
             secret_inline_c_0,
             secretLen_inline_c_1,
             now_inline_c_2,
             timeStepSize_inline_c_3,
             startOffset_inline_c_4,
             digits_inline_c_5,
-            flags_inline_c_6,
-            outputOtp_inline_c_7
+            outputOtp_inline_c_6
         )
     );
 }
