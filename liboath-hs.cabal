@@ -28,7 +28,7 @@ library
   extra-lib-dirs: /usr/lib
   extra-libraries:     oath
   cc-options:          -O2 -Wall
-  pkgconfig-depends:   liboath >= 2.0
+  pkgconfig-depends:   liboath >= 2.6
 
 -- executable oathtool-hs
 --   hs-source-dirs:      app
