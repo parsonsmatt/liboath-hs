@@ -31,7 +31,7 @@ import qualified Language.C.Inline as C
 
 C.context (C.baseCtx <> C.bsCtx)
 
-C.include "<oath.h>"
+C.include "oath.h"
 
 -- Haskell utilities
 
