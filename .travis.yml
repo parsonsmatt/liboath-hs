@@ -157,6 +157,7 @@ install:
 script:
 - |
   set -ex
+  ls -al /usr/lib
   case "$BUILD" in
     stack)
       stack --no-terminal $ARGS test --bench --no-run-benchmarks --haddock --no-haddock-deps
