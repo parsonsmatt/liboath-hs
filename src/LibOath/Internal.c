@@ -1,5 +1,5 @@
 
-#include "oath.h"
+#include <oath.h>
 
 int inline_c_LibOath_Internal_0_e5c09df3584bfac5d1724487f17015d119521c92() {
 return ( oath_init() );
