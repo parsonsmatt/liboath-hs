@@ -1,5 +1,5 @@
 name:                liboath-hs
-version:             0.0.1.0
+version:             0.0.1.2
 synopsis:            Bindings to liboath
 description:         See README for details.
 homepage:            https://github.com/parsonsmatt/liboath-hs#readme
@@ -11,6 +11,7 @@ copyright:           2017 Matt Parsons
 category:            Security
 build-type:          Simple
 extra-source-files:  README.md
+                     changelog.md
 cabal-version:       >=1.10
 
 library
@@ -18,7 +19,7 @@ library
   exposed-modules:     LibOath
                      , LibOath.Internal
   build-depends:       base            >= 4.7     && < 5
-                     , inline-c        >= 0.5.6.1 && < 0.6.1.0
+                     , inline-c        >= 0.5.6.1 && < 0.10
                      , safe-exceptions
                      , bytestring
                      , time

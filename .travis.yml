@@ -50,12 +50,24 @@ matrix:
     compiler: ": #stack default"
     addons: {apt: {packages: [libgmp-dev,liboath-dev]}}
 
-  - env: BUILD=stack ARGS="--resolver lts-7"
-    compiler: ": #stack 8.0.1"
+  - env: BUILD=stack ARGS="--resolver lts-9"
+    compiler: ": #stack 8.0.2"
     addons: {apt: {packages: [libgmp-dev,liboath-dev]}}
 
-  - env: BUILD=stack ARGS="--resolver lts-8"
-    compiler: ": #stack 8.0.2"
+  - env: BUILD=stack ARGS="--resolver lts-11"
+    compiler: ": #stack 8.2.2"
+    addons: {apt: {packages: [libgmp-dev,liboath-dev]}}
+
+  - env: BUILD=stack ARGS="--resolver lts-12"
+    compiler: ": #stack 8.4.4"
+    addons: {apt: {packages: [libgmp-dev,liboath-dev]}}
+
+  - env: BUILD=stack ARGS="--resolver lts-14"
+    compiler: ": #stack 8.6.5"
+    addons: {apt: {packages: [libgmp-dev,liboath-dev]}}
+
+  - env: BUILD=stack ARGS="--resolver lts-16"
+    compiler: ": #stack 8.8.4"
     addons: {apt: {packages: [libgmp-dev,liboath-dev]}}
 
   # Nightly builds are allowed to fail
